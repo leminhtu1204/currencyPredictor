@@ -27,7 +27,7 @@ namespace CurrencyPredictor.Services
                 yValues[i] = result[i].Rates[toCurrencyName];
             }
 
-            var predictedRate = this.LinearRegression(xValues, yValues, 2);
+            var predictedRate = this.LinearRegression(xValues, yValues, 1);
             return predictedRate;
 
         }

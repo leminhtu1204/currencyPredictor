@@ -17,14 +17,14 @@ namespace CurrencyPredictor
                 try
                 {
                     Console.WriteLine("Please input the target currency name");
-                    string str = Console.ReadLine();
+                    string targetCurrencyStr = Console.ReadLine();
                     CurrencyService service = new CurrencyService();
-                    var predictedRate = service.GetPredictedCurrencyExchangeRate("", str);
-                    Console.WriteLine("result is :" + predictedRate);
+                    var predictedRate = service.GetPredictedCurrencyExchangeRate("", targetCurrencyStr);
+                    Console.WriteLine("The predicted currency exchange from USD to " + targetCurrencyStr + " for 15/1/2017 is " + predictedRate);
+                    Console.WriteLine("########################################################################");
                 }
                 catch (Exception e)
                 {
-
                     Console.WriteLine(e.Message);
                 }
                 
