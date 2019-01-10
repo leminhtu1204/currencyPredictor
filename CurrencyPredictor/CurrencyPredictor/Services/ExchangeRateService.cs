@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyPredictor.Services
 {
-    public class ExchangeRateService
+    public sealed class ExchangeRateService
     {
         private static ExchangeRateService instance = null;
         private static readonly object padlock = new object();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyPredictor.Services
 {
-   public interface ICurrencyService
+   public interface IOpenExchangeRateService
     {
         double GetPredictedCurrencyExchangeRate(string frCurrencyName, string toCurrencyName);
     }

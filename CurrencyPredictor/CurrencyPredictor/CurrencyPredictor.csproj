@@ -47,13 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AppConfiguration.cs" />
-    <Compile Include="Services\CurrencyService.cs" />
-    <Compile Include="Services\ICurrencyService.cs" />
+    <Compile Include="Services\FreeOpenExchangeService.cs" />
+    <Compile Include="Services\IOpenExchangeRateService.cs" />
     <Compile Include="Model\CurrencyExchangeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExchangeRateService.cs" />
-    <Compile Include="Services\IExchangeRateService.cs" />
+    <Compile Include="Utilities\LinearRegressionEquation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

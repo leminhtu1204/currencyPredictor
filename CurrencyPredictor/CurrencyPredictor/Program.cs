@@ -10,6 +10,10 @@ namespace CurrencyPredictor
 {
     class Program
     {
+        public Program()
+        {
+
+        }
         static void Main(string[] args)
         {
             while (true)
@@ -18,7 +22,7 @@ namespace CurrencyPredictor
                 {
                     Console.WriteLine("Please input the target currency name");
                     string targetCurrencyStr = Console.ReadLine();
-                    CurrencyService service = new CurrencyService();
+                    IOpenExchangeRateService service = new FreeOpenExchangeService();
                     var predictedRate = service.GetPredictedCurrencyExchangeRate("", targetCurrencyStr);
                     Console.WriteLine("The predicted currency exchange from USD to " + targetCurrencyStr + " for 15/1/2017 is " + predictedRate);
                     Console.WriteLine("########################################################################");
