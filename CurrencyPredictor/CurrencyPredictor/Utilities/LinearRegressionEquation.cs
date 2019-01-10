@@ -10,10 +10,14 @@ namespace CurrencyPredictor.Utilities
     {
         public static double LinearRegression(double[] xValues, double[] yValues, double xValue)
         {
+            if (xValues.Length == 0 || yValues.Length == 0)
+            {
+                throw new Exception("Invalid Input values");
+            }
+
             if (xValues.Length != yValues.Length)
             {
-                Console.WriteLine("Input values should be with the same length.");
-                throw new Exception();
+                throw new Exception ("Input values should be with the same length.");
             }
 
             double sumX = 0;

@@ -10,29 +10,12 @@ using System.Threading.Tasks;
 
 namespace CurrencyPredictor.Services
 {
-    public sealed class ExchangeRateService
+    public class ExchangeRateService: IExchangeRateService
     {
-        private static ExchangeRateService instance = null;
-        private static readonly object padlock = new object();
         private List<CurrencyExchangeModel> rates = new List<CurrencyExchangeModel>();
         public ExchangeRateService()
         {
             this.GetExchangeRatesByBaseCurrency();
-        }
-
-        public static ExchangeRateService Instance
-        {
-            get
-            {
-                lock (padlock)
-                {
-                    if (instance == null)
-                    {
-                        instance = new ExchangeRateService();
-                    }
-                }
-                return instance;
-            }
         }
 
         public List<CurrencyExchangeModel> GetAllExchangeRate()

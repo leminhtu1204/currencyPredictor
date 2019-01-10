@@ -1,5 +1,6 @@
 ﻿using CurrencyPredictor.Configuration;
 using CurrencyPredictor.Services;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +17,16 @@ namespace CurrencyPredictor
         }
         static void Main(string[] args)
         {
+            var container = new Container();
+
+            container.Register<IExchangeRateService, ExchangeRateService>(Lifestyle.Singleton);
+            var service = container.GetInstance<FreeOpenExchangeService>();
             while (true)
             {
                 try
                 {
                     Console.WriteLine("Please input the target currency name");
                     string targetCurrencyStr = Console.ReadLine();
-                    IOpenExchangeRateService service = new FreeOpenExchangeService();
                     var predictedRate = service.GetPredictedCurrencyExchangeRate("", targetCurrencyStr);
                     Console.WriteLine("The predicted currency exchange from USD to " + targetCurrencyStr + " for 15/1/2017 is " + predictedRate);
                     Console.WriteLine("########################################################################");

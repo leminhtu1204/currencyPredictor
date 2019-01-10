@@ -10,14 +10,15 @@ namespace CurrencyPredictor.Services
 {
     public class FreeOpenExchangeService : IOpenExchangeRateService
     {
-        public FreeOpenExchangeService()
+        private readonly IExchangeRateService exchangeRateService;
+        public FreeOpenExchangeService(IExchangeRateService exchangeRateService)
         {
-
+            this.exchangeRateService = exchangeRateService;
         }
 
         public double GetPredictedCurrencyExchangeRate(string frCurrencyName, string toCurrencyName)
         {
-            var exchangeRates = this.GetCurrencyExchangeRates();
+            var exchangeRates = exchangeRateService.GetAllExchangeRate();
 
             var xValues = new double[exchangeRates.Count];
             var yValues = new double[exchangeRates.Count];
@@ -30,20 +31,6 @@ namespace CurrencyPredictor.Services
 
             var predictedRate = LinearRegressionEquation.LinearRegression(xValues, yValues, 1);
             return predictedRate;
-        }
-
-        private List<CurrencyExchangeModel> GetCurrencyExchangeRates()
-        {
-            var exchangeRateInstance = ExchangeRateService.Instance;
-
-            if (exchangeRateInstance == null)
-            {
-                Console.WriteLine("cannot init exchange rates data");
-                throw new Exception();
-            }
-
-            var exchangeRates = exchangeRateInstance.GetAllExchangeRate();
-            return exchangeRates;
         }
     }
 }

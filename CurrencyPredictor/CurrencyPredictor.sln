@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyPredictor", "CurrencyPredictor\CurrencyPredictor.csproj", "{71939908-4569-40F7-A57B-C902B1314B14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyPredictorTest", "CurrencyPredictorTest\CurrencyPredictorTest.csproj", "{998D96DE-0918-4E04-BEED-A11B0AB40363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{71939908-4569-40F7-A57B-C902B1314B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71939908-4569-40F7-A57B-C902B1314B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71939908-4569-40F7-A57B-C902B1314B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998D96DE-0918-4E04-BEED-A11B0AB40363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998D96DE-0918-4E04-BEED-A11B0AB40363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998D96DE-0918-4E04-BEED-A11B0AB40363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998D96DE-0918-4E04-BEED-A11B0AB40363}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
