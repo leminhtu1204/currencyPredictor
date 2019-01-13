@@ -26,7 +26,7 @@ namespace CurrencyPredictor
             {
                 try
                 {
-                    Console.WriteLine("Current base currency is +" + baseCurrency);
+                    Console.WriteLine("Free version only support base currency is " + baseCurrency);
                     Console.WriteLine("Please input the target currency name");
                     string targetCurrencyStr = Console.ReadLine();
                     var predictedRate = service.GetPredictedCurrencyExchangeRate(baseCurrency, targetCurrencyStr);
