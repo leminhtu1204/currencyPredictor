@@ -21,13 +21,15 @@ namespace CurrencyPredictor
 
             container.Register<IExchangeRateService, ExchangeRateService>(Lifestyle.Singleton);
             var service = container.GetInstance<FreeOpenExchangeService>();
+            var baseCurrency = "USD";
             while (true)
             {
                 try
                 {
+                    Console.WriteLine("Current base currency is +" + baseCurrency);
                     Console.WriteLine("Please input the target currency name");
                     string targetCurrencyStr = Console.ReadLine();
-                    var predictedRate = service.GetPredictedCurrencyExchangeRate("", targetCurrencyStr);
+                    var predictedRate = service.GetPredictedCurrencyExchangeRate(baseCurrency, targetCurrencyStr);
                     Console.WriteLine("The predicted currency exchange from USD to " + targetCurrencyStr + " for 15/1/2017 is " + predictedRate);
                     Console.WriteLine("########################################################################");
                 }

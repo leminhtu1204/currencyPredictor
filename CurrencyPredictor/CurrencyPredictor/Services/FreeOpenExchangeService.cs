@@ -1,4 +1,5 @@
-﻿using CurrencyPredictor.Model;
+﻿using CurrencyPredictor.Configuration;
+using CurrencyPredictor.Model;
 using CurrencyPredictor.Utilities;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace CurrencyPredictor.Services
                 yValues[i] = exchangeRates[i].Rates[toCurrencyName];
             }
 
-            var predictedRate = LinearRegressionEquation.LinearRegression(xValues, yValues, 1);
+            var predictedRate = LinearRegressionEquation.LinearRegression(xValues, yValues, AppConfiguration.PredictorPeriod + 1); // 13 means 2017-1-1: need double check with requirement again
             return predictedRate;
         }
     }
